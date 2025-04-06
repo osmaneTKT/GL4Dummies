@@ -81,6 +81,37 @@ set -gx PATH $HOME/local/bin $PATH
 set -gx LD_LIBRARY_PATH $HOME/local/lib $LD_LIBRARY_PATH
 ```
 
+
+## Docker Usage (Debian-based Linux only)
+
+GL4Dummies can also be built and run using Docker, which comes pre-configured with all necessary dependencies.  
+This method has been tested on Debian-based Linux distributions like **Ubuntu** and **Kali Linux**.
+
+### Requirements
+
+Make sure that **X11 forwarding** is enabled on your host system.
+
+---
+
+### Build and run the container:
+
+```bash
+xhost +
+docker build . -t gl4
+docker run -it --rm \
+  -e DISPLAY=$DISPLAY \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -v $(pwd):/workspace \
+  gl4
+
+### Test an example inside the container:
+
+```bash
+cd samples/sample3d_01-1.6
+make
+./sample3d
+
+
 ## Online instructions
 You can also refer to the manual ([PDF](http://gl4d.api8.fr/FR/gl4d.pdf)) for more in-depth instructions (in
 French).
