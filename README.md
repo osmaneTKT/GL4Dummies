@@ -102,13 +102,14 @@ docker run -it --rm \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -v $(pwd):/workspace \
   gl4
-
+```
 ### Test an example inside the container:
 
 ```bash
 cd samples/sample3d_01-1.6
 make
 ./sample3d
+```
 
 
 ## Online instructions
