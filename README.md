@@ -85,7 +85,6 @@ set -gx LD_LIBRARY_PATH $HOME/local/lib $LD_LIBRARY_PATH
 ## Docker Usage (Debian-based Linux only)
 
 GL4Dummies can also be built and run using Docker, which comes pre-configured with all necessary dependencies.  
-This method has been tested on Debian-based Linux distributions like **Ubuntu** and **Kali Linux**.
 
 ### Requirements
 
